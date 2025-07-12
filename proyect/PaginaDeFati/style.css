@@ -128,7 +128,7 @@ th, td{
 
 
 /* fondo inicio other video*/
-.home{
+.contenido-header{
     background-image: linear-gradient(#000000, #00000020), url(images/fondo-inicio.png);
     height: 60rem;
     display: flex;
