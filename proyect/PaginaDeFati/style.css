@@ -128,7 +128,7 @@ th, td{
 
 
 /* fondo inicio other video*/
-.contenido-header{
+/*.home{
     background-image: linear-gradient(#000000, #00000020), url(images/fondo-inicio.png);
     height: 60rem;
     display: flex;
@@ -137,10 +137,20 @@ th, td{
     background-size: cover;
     background-position: center;
 }
-
+*/
 
 .contenido-header{
     position: relative;
+}
+
+.contenido-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.753);
 }
 
 .header-txt{
@@ -158,6 +168,13 @@ th, td{
     color: #fffefe;
     font-size: 7rem;
     font-family: 'Oswald';
+}
+
+
+/* opción fondoinicio con video*/
+video{
+    width: 100%;
+    height: 100%;
 }
 
 
