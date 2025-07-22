@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+
 /*
 font-family: 'Oswald', sans-serif;
 font-family: 'Poppins', sans-serif;
@@ -14,11 +16,14 @@ font-family: 'Poppins', sans-serif;
     list-style: none;
 }
 
+body{
+    background-color: #ffffff;
+}
+
 html{
     font-size: 62.5%;
     font-family: 'Poppins', sans-serif;
 }
-
 
 img{
     max-width: 100%;
@@ -30,12 +35,20 @@ img{
 }
 
 .header{
-    display: flex;
-    align-items: center;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
     min-height: 1vh;
-    background-color: #f5f5f5;
-    padding: 3.5rem 0; 
-} 
+    padding: 32px; 
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1.5px);
+    z-index: 5;
+    /* Transiciones suaves para movimiento y opacidad */
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-in-out;
+
+    /* Estado inicial (visible) */
+    transform: translateY(0);
+    opacity: 1;
+}
 
 
 .menu{
@@ -51,7 +64,7 @@ img{
 
 .logo{
     font-size: 25px;
-    color: #000000;
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -65,10 +78,16 @@ img{
 .menu .navbar ul li a{
     font-size: 18px;
     padding: 20px;
-    color: #000000;
+    color: #ffffff;
     display: block;
+    font-weight: 500;
+    transition: .3s ease;
 }
 
+.menu .navbar a:hover{
+    transform: scale(1.03);
+    color: #ff0000;
+}
 #menu {
     display: none;
 }
@@ -95,58 +114,63 @@ th, td{
     color: #FFFFFF;
 }
 
-.borrar{
-    background-color: #000000;
-    border-radius: 50%;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 800;
-    cursor: pointer;
-}
 
-
-/* fondo inicio other video*/
-/*.home{
-    background-image: linear-gradient(#000000, #00000020), url(images/fondo-inicio.png);
-    height: 60rem;
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
-*/
 
 .contenido-header{
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.contenido-header::before{
-    content: '';
+
+.fondo-inicio {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.753);
-}
-
-.header-txt{
-    position: absolute;
-    z-index: 2;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fondo-inicio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fondo-inicio .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no bloquee el video si es interactivo */
+    background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.1) 100%
+    );
+
+    z-index: 2;
+}
+
+
+.header-txt {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header-txt h1{
     color: #fffefe;
     font-size: 7rem;
-    font-family: 'Oswald';
+    font-family: 'Times New Roman', sans-serif;
 }
 
 
@@ -171,7 +195,7 @@ video{
     text-transform: capitalize;
     display: inline-block;
     padding: 11px 25px;
-    background-color: #ff0000;
+    background-color: #000000;
     color:#ffffff;
     border-radius: 5px;
     text-align: center;
@@ -184,18 +208,11 @@ video{
 }
 
 .bordes:hover{
-    color: #000000;
-    background-color: #FFFFFF;
+    color: #ffffff;
+    background-color: #ff0000;
 }
 
-.btn-2{
-    display: inline-block;
-    padding: 7px 10px;
-    background-color: #000000;
-    color: #FFFFFF;
-    border-radius: 5px;
-    font-size: 15px;
-}
+
 .services{
     padding: 50px 0;
     text-align: center;
@@ -204,40 +221,121 @@ video{
 .services h2{
     color: #000000;
     font-family: 'Oswald', sans-serif;
-    font-size: 50px;
-    text-transform: uppercase;
+    font-size: 48px;
     margin-bottom: 50px;
 }
 
 .services-content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px
+    gap: 50px;
+
 }
 
 .service{
     text-align: center;
-    padding: 30px;
+    padding: 80px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-position: center;      /* Centra la imagen */
+    background-size: cover;           /* Cubre todo el contenedor */
+    background-repeat: no-repeat;
+    border-radius: 20px; 
+    overflow: hidden;
 }
+
+.service-1{
+    background-image: linear-gradient(rgba(73, 73, 73, 0.64), transparent), url(images/barras.png);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.service-2{
+    background-image: linear-gradient(rgba(73, 73, 73, 0.8), transparent), url(images/pendulo.png);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+
+}
+.service-3{
+    background-image: linear-gradient(rgba(73, 73, 73, 0.64), transparent), url(images/facelift.png);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.service-4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), transparent), url(images/sanacion.png);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.service-5{
+    background-image:  linear-gradient(rgba(56, 56, 56, 0.507)), url(images/sahumo.webp);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.service-6{
+    background-image:  linear-gradient(rgba(56, 56, 56, 0.3)), url(images/psicoterapia.avif);
+    background-color: #e3e3e3;
+    padding: 100px;
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+.bottom-service {
+    outline: none;
+    box-sizing: border-box; /* Asegura que padding y border no cambien el tamaño */
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+
+.bottom-service:hover {
+  transform: translateY(-5px);
+}
+
 
 .service h3{
     font-size: 20px;
-    color: #000000;
+    color: #ffffff;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-.service p, .precio{
-    font-size: 16px;
-    color: #000000;
+.service p{
     margin-bottom: 15px;
 }
 
-.precio{
-    font-weight: 800;
+.service .text-container p {
+    font-size: 1.5rem;       /* Igual que el .text-container p original */
+    color: rgb(255, 255, 255); /* El color que tú quieras (ejemplo: blanco) */
 }
+
+
+.promo-1 {
+   background-image:
+    linear-gradient(rgba(0, 0, 0, 0.8), transparent),
+    linear-gradient(rgba(0, 0, 0, 0.8), transparent),
+    url('images/barras.png'),
+    url('images/pendulo.png');
+  background-position: left center, right center;
+  background-size: 50% 100%, 50% 100%;
+  background-repeat: no-repeat;
+}
+
 
 .footer{
     padding: 30px;
@@ -284,6 +382,10 @@ video{
         font-size: 4rem;
     }
 
+    .header{
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 27px; 
+    }
     .header-txt p{
         font-size: 15px;
     }
@@ -297,3 +399,122 @@ video{
 
     }
 }
+
+/* "Acerca de mí" */
+
+.icon{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;  /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+
+.title-container {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0 0;
+}
+
+
+.title {
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    padding: 1rem;
+    font-size: 42px;
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.title span {
+    color: rgb(99, 191, 197);
+}
+
+
+#about {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    padding: 4rem 2rem;
+    min-height: 80vh; /* Esto asegura que la sección al menos ocupe el alto de la pantalla */
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.about-containers{
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+
+.about-containers, .about-details-container{
+    display: flex;
+}
+
+.about-pic{
+    border-radius: 2rem;
+}
+
+.details-container{
+    padding: 3rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53,53,53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;         /* Esto alinea verticalmente */
+    justify-content: center;     /* Esto centra horizontalmente */
+    gap: 4rem;
+    flex-wrap: wrap;             /* Para que se adapte en pantallas pequeñas */
+    height: auto;                /* Evita restricciones de altura */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    margin: 0 10rem;
+}
+
+
+.section__pic-container {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.details-container p {
+    color: rgb(51, 51, 51);
+    font-size: 1.02rem;
+    
+}
+
+.text-container p {
+    font-size: 1.5rem;
+    color: rgb(54, 54, 54);
+    
+}
+
+
+
+

@@ -5,9 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pagina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="contenido-header">
+        <div class="header-txt">
+        <h1>Date un respiro</h1>
+        <p>Lorem ipsum lorem lorem</p>
+        <a href="#" class="btn bordes">¡Reservá ahora!</a> 
+        </div>
+        <div class="fondo-inicio">
+            <video autoplay loop>
+                <source src="images/inicio-video-chica (online-video-cutter.com).mp4">
+            </video>
+        <div class="overlay"></div>
+        </div>
+    </div>
+
     
     <header class="header">
         <div class="menu container">
@@ -19,97 +35,165 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="Inicio">Inicio</a></li>
-                    <li><a href="Sobre mí">Sobre mí</a></li>
+                    <li><a href="Sobre mí">Acerca de</a></li>
                     <li><a href="Servicios">Servicios</a></li>
+                    <li><a href="Promociones">Promos</a></li>
                     <li><a href="Contacto">Contacto</a></li>
                 </ul>
             </nav>
-            <div>
-                <ul>
-                    <li class="submenu">
-                        <img src="images/car.svg" id="img-carrito" alt="carrito">
-                        <div id="carrito">
-                            <table id="lista-carrito">
-                                <thead>
-                                    <tr>
-                                        <th>Imagen</th>
-                                        <th>Nombre</th>
-                                        <th>Precio</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </header>
 
-    <div class="contenido-header">
-        <div class="contenedor-encabezado">
-            <div class="header-txt">
-            <h1>Date un respiro</h1>
-            <p>Lorem ipsum lorem lorem</p>
-            <a href="#" class="btn bordes">¡Reservá ahora!</a>
+    <section id="about">
+        <div class="title-container">
+            <h2 class="title"> <span>Acerca</span> de mí </h2>
+        </div>
+        <div class="section-container">
+            <div class="section__pic-container">
+                <img src="images/main-image.png" alt="profile picture" class="about-pic" />
             </div>
-            <video autoplay loop>
-                <source src="images/video-from-rawpixel-id-17120715-sd.mp4">
-            </video>
-        </div>   
-    </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="assets/experience.png" alt="Experience icon" class="icon" />
+                        <h3>Experiencia</h3>
+                        <p>+2 años <br />Lorem ipsum dolor</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="assets/education.png" alt="Education icon" class="icon" />
+                        <h3>Educación</h3>
+                        <p>Academia lorem ipsum <br />Practice lorem ipsum</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero ut facilis ipsum similique necessitatibus rem maxime 
+                    inventore voluptas sequi, rerum odio veritatis sint quae quis nisi quas autem. Quae, odit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ullam fugiat sint, ipsam pariatur aut, 
+                    eligendi, itaque eius aspernatur autem cumque! Minus hic nemo ipsam, in consequuntur nihil deleniti sunt?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main class="services container" id="lista-1">
 
-        <h2>Servicios</h2>
+        <div class="title-container">
+            <h2 class="title"> <span>Ser</span>vicios</h2>
+        </div>
 
         <div class="services-content">
 
-            <div class="service">
-                <img src="images/barras.png" alt="">
-                <div class="service-txt">
+            <!--<div class="details-container service">
+                <img src="images/barras.png" alt="" class="service-image">
+                <div class="text-container service-txt">
                     <h3>Barras de Acces</h3>
-                    <p>explicación</p>
-                    <p class="precio">$30000</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem ad dolor alias officiis nesciunt. Minus, veniam aspernatur.
+                         Illo hic iste quo nesciunt nam provident! Minima, asperiores et? Ad, porro doloribus!</p>
+                    <a href="#" class="contactar btn-2" data-id="1">Contactar</a>
                 </div>
             </div>
 
-            <div class="service">
-                <img src="images/pendulo.png" alt="">
-                <div class="service-txt">
-                    <h3>Péndulo</h3>
-                    <p>explicación</p>
-                    <p class="precio">$30000</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+            <div class="details-container service">
+                <img src="images/pendulo.png" alt="" class="service-image">
+                <div class="text-container service-txt">
+                    <h3>Radiestesia</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Adipisci delectus architecto cum id doloremque vel in quibusdam recusandae numquam harum, quidem itaque corrupti inventore deserunt porro ullam nesciunt qui quos.</p>
+                    <a href="#" class="contactar btn-2" data-id="2">Contactar</a>
                 </div>
             </div>
 
-            <div class="service">
-                <img src="images/facelift.png" alt="">
-                <div class="service-txt">
+            <div class="details-container service">
+                <img src="images/facelift.png" alt="" class="service-image">
+                <div class="text-container service-txt">
                     <h3>Facelift</h3>
-                    <p>explicación</p>
-                    <p class="precio">$30000</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rerum perferendis aliquam voluptates repellat similique dolore excepturi placeat optio. Quam dolorem tempore, deserunt quaerat dolore esse laudantium dignissimos consectetur magni!</p>
+                    <a href="#" class="contactar btn-2" data-id="4">Contactar</a>                
                 </div>
             </div>
         
-            <div class="service">
-                <img src="images/sanacion.png" alt="">
-                <div class="service-txt">
+            <div class="details-container service">
+                <img src="images/sanacion.png" alt="" class="service-image">
+                <div class="text-container service-txt">
                     <h3>Sanación Pránica</h3>
-                    <p>explicación</p>
-                    <p class="precio">$30000</p>
-                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rerum perferendis aliquam voluptates repellat similique dolore excepturi placeat optio. Quam dolorem tempore, deserunt quaerat dolore esse laudantium dignissimos consectetur magni!</p>
+                    <a href="#" class="contactar btn-2" data-id="4">Contactar</a>                
                 </div>
-            </div>
+            </div> -->
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-1" >
+                        <div class=" text-container service-txt">
+                            <h3>Barras de Access</h3>          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-2" >
+                        <div class=" text-container service-txt">
+                            <h3>Radiestesia</h3>          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-3" >
+                        <div class=" text-container service-txt">
+                            <h3>Facelift</h3>          
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-4" >
+                        <div class=" text-container service-txt">
+                            <h3>Sanación Pránica</h3>          
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-5" >
+                        <div class=" text-container service-txt">
+                            <h3>Limpieza con Sahumo</h3>          
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service service-6" >
+                        <div class=" text-container service-txt">
+                            <h3>Psicoterapia</h3>          
+                        </div>
+                    </div>
+                </div>
 
         </div>
 
     </main>
+
+    <section>
+        <div class="title-container">
+            <h2 class="title"> <span>Promo</span>ciones</h2>
+        </div>
+
+        <div class="services container services-content">
+                <div class="bottom-service" onclick="window.open('http://127.0.0.1:5500/proyect/PaginaDeFati/index.html', '_blank')" style="cursor: pointer;">
+                    <div class="service promo-1" >
+                        <div class=" text-container service-txt">
+                            <h3>Barras + Preguntas Radiestesia</h3>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+
 
     <footer class="footer">
 
